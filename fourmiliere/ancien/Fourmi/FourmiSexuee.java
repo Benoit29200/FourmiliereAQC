@@ -13,25 +13,24 @@ public class FourmiSexuee extends Fourmi {
 		listeMale = new ArrayList<Male>();
 	}
 	
-	public Male fourmiMale() {
+	private boolean creerFourmiMale() {
 		Male leMale = new Male();
-		listeMale.add(leMale);
-		return leMale;
+		return listeMale.add(leMale);
 	}
 	
-	public Femelle fourmiFemelle() {
+	private boolean creerFourmiFemelle() {
 		Femelle laFemelle = new Femelle();
-		listeFemelle.add(laFemelle);
-		return laFemelle;
+		return listeFemelle.add(laFemelle);
 	}
 	
-	public Fourmi addFourmiSexuee() {
-		if(listeFemelle.size()>listeMale.size()) {
-			return fourmiMale();
+	public boolean addFourmiSexuee() {
+		int male = 0 + (int)(Math.random() * (2)); // 1 Male, 0 Femelle
+		if(male==0) {
+			creerFourmiFemelle();
 		}
 		else {
-			return fourmiFemelle();
+			creerFourmiMale();
 		}
-			
+		return true;
 	}
 }
