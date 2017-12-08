@@ -7,8 +7,8 @@ public class Larve extends EtatDeveloppement {
 	public Larve(Fourmi f) {
 		super(f);
 		setPoids();
-		this.getFourmi().setdureeVie(10); // en jours 
-		this.getFourmi().getFourmiliere().getNid().getMesFourmis().add(f);
+		this.getFourmi().setManger(true);
+		this.getFourmi().setDureeVie(10); // en jours 
 	}
 	
 	public void cycle() {

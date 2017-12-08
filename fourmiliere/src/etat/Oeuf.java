@@ -7,7 +7,7 @@ public class Oeuf extends EtatDeveloppement {
 	public Oeuf(Fourmi f) {
 		super(f);
 		setPoids();
-		this.getFourmi().setdureeVie(3); // en jours
+		this.getFourmi().setDureeVie(3); // en jours
 		this.getFourmi().getFourmiliere().getNid().getMesFourmis().add(f);
 	}
 	

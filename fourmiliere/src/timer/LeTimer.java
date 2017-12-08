@@ -14,7 +14,8 @@ public class LeTimer extends Observable {
 		this.maFourmiliere = f;
 		Timer timer;
 		timer = new Timer();
-		timer.schedule((TimerTask)new allerManger(this.maFourmiliere), 0, 24000);
+		timer.schedule(new allerManger(this.maFourmiliere), 0, 24000); // 24000 = 24 h (1000ms = 1h)
+		timer.schedule(new majDureeVie(this.maFourmiliere), 0, 24000);
 	}
 
 }

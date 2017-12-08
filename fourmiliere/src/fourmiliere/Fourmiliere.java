@@ -5,7 +5,9 @@ import java.util.List;
 
 import cimetiere.Cimetiere;
 import depot.Depot;
+import etat.Adulte;
 import role.Reine;
+import role.Role;
 
 public class Fourmiliere {
 	List<Fourmi> lesFourmis;
@@ -13,12 +15,26 @@ public class Fourmiliere {
 	Depot monDepot;
 	Cimetiere monCimetiere;
 	
-	public Fourmiliere(Reine reine) {
+	public Fourmiliere() {
 		this.lesFourmis = new ArrayList<Fourmi>();
-		this.lesFourmis.add(reine.getFourmi());
 		this.monNid = new Nid(this);
 		this.monDepot = new Depot(this);
-		this.monCimetiere = new Cimetiere();
+		this.monCimetiere = new Cimetiere(this);
+		start();
+	}
+	
+	public void start() {
+		lesFourmis.add(nouvelleReine());
+	}
+	
+	private Fourmi nouvelleReine() {
+		
+		Fourmi f = new Fourmi(this);
+		Adulte a = new Adulte(f);
+		Reine r  = new Reine(a);
+		
+		return r.getFourmi();
+		
 	}
 	
 	public boolean addFourmi() {

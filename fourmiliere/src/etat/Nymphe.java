@@ -7,7 +7,7 @@ public class Nymphe extends EtatDeveloppement {
 	public Nymphe(Fourmi f) {
 		super(f);
 		setPoids();
-		this.getFourmi().setdureeVie(17); // en jours
+		this.getFourmi().setDureeVie(17); // en jours
 		this.getFourmi().getFourmiliere().getNid().getMesFourmis().add(f);
 	}
 	

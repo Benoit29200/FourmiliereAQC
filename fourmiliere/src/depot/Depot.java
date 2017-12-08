@@ -30,7 +30,7 @@ public class Depot {
 		mesProie.remove(p);
 		double diviseur = 1.0; // larve
 
-		if (f.getEtat() instanceof Adulte)
+		if (f.getEstAdulte())
 			diviseur = 3.0; // autre fourmis
 
 		double poidsAManger = f.getPoids() / diviseur;

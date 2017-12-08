@@ -18,7 +18,7 @@ public class Reine extends Role {
 	
 	private void setDureeVie() {
 		int dureeVie = 1460 + (int)(Math.random() * ((3650 - 1460) + 1)); // entre 4 et 10 ans en jours
-		this.getAdulte().getFourmi().setdureeVie(dureeVie);
+		this.getAdulte().getFourmi().setDureeVie(dureeVie);
 	}
 	
 	public boolean pondre() {
@@ -27,11 +27,13 @@ public class Reine extends Role {
 		if(!this.getAdulte().getFourmi().getFourmiliere().getNid().getMesFourmis().contains(this.getFourmi())) {
 			retour = this.getAdulte().getFourmi().getFourmiliere().getNid().getMesFourmis().add(this.getFourmi());
 			if(!retour) return retour;
-		}	
-		retour = this.getAdulte().getFourmi().getFourmiliere().addFourmi();// pond des oeufs, faire nbaleatoire nb oeufs
-		
+		}
+		int nbOeufs = 10 + (int)(Math.random() * ((50 - 10) + 1));
+		for(int i =0 ; i < nbOeufs ; i++) {
+			retour = this.getAdulte().getFourmi().getFourmiliere().addFourmi();
+			if(!retour) return false;
+		}
 		return retour;	
 	}
-
 
 }

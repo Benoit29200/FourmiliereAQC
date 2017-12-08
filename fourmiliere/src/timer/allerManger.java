@@ -16,7 +16,9 @@ public class allerManger extends TimerTask {
 	@Override
 	public void run() {
 		for(Fourmi fourmi:maFourmiliere.getFourmis()) {
-			
+			if(fourmi.doitManger()) {
+				fourmi.manger();
+			}
 		}
 		
 	}

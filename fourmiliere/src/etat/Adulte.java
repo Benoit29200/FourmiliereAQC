@@ -10,10 +10,12 @@ import role.Soldat;
 
 public class Adulte extends EtatDeveloppement {
 	
-	Role monRole;
+	
 	
 	public Adulte(Fourmi f) {
 		super(f);
+		this.getFourmi().setManger(true);
+		this.getFourmi().setEstAdulte(true);
 		int typeFourmiAleatoire = 1 + (int)(Math.random() * ((101) + 1)); // nb entre 0 et 100
 		
 		if( typeFourmiAleatoire <= 12) {
@@ -31,11 +33,6 @@ public class Adulte extends EtatDeveloppement {
 		else {
 			this.monRole = new Ouvriere(this);
 		}
-	}
-	
-	public void manger() {
-		Proie p = this.getFourmi().getFourmiliere().getDepot().getProies().get(0);
-		this.getFourmi().getFourmiliere().getDepot().consommeProie(p, this.getFourmi());
 	}
 
 }

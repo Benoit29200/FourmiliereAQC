@@ -5,14 +5,17 @@ import java.util.List;
 
 import depot.Proie;
 import fourmiliere.Fourmi;
+import fourmiliere.Fourmiliere;
 
 public class Cimetiere {
 	List<Fourmi> dechetFourmi;
 	List<Proie> dechetDechet;
+	Fourmiliere maFourmiliere;
 	
-	public Cimetiere() {
+	public Cimetiere(Fourmiliere f) {
 		dechetFourmi = new ArrayList<Fourmi>();
 		dechetDechet = new ArrayList<Proie>();
+		this.maFourmiliere = f;
 	}
 	
 	public int sizeFourmi() {
