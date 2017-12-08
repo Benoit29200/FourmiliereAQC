@@ -3,30 +3,56 @@ package cimetiere;
 import java.util.ArrayList;
 import java.util.List;
 
+import depot.Proie;
+import fourmiliere.Fourmi;
+
 public class Cimetiere {
-	List<Object> dechet;
+	List<Fourmi> dechetFourmi;
+	List<Proie> dechetDechet;
 	
 	public Cimetiere() {
-		dechet = new ArrayList<Object>();
+		dechetFourmi = new ArrayList<Fourmi>();
+		dechetDechet = new ArrayList<Proie>();
 	}
 	
-	public int size() {
-		return dechet.size();
+	public int sizeFourmi() {
+		return dechetFourmi.size();
 	}
 	
-	public boolean isEmpty() {
-		if(size()==0) return true;
+	public boolean isEmptyFourmis() {
+		if(sizeFourmi()==0) return true;
 		return false;
 	}
 	
-	public boolean addDechet(Object dechets) {
-		return dechet.add(dechets);
+	public int sizeDechet() {
+		return dechetDechet.size();
+	}
+	
+	public boolean isEmptyDechet() {
+		if(sizeDechet()==0) return true;
+		return false;
+	}
+	
+	public boolean addDechet(Proie dechets) {
+		return dechetDechet.add(dechets);
+	}
+	
+	public boolean addDechet(Fourmi dechets) {
+		return dechetFourmi.add(dechets);
 	}
 	
 	public void removeDechet(int nombreDeDechet) {
-		for(int i = 0; i <nombreDeDechet;i++) {
-			if(this.isEmpty()) return;
-			dechet.remove(0);
+		if(sizeDechet()<sizeFourmi()) {
+			for(int i = 0; i <nombreDeDechet;i++) {
+				if(this.isEmptyDechet()) return;
+				dechetFourmi.remove(0);
+			}
+		}
+		else {
+			for(int i = 0; i <nombreDeDechet;i++) {
+				if(this.isEmptyDechet()) return;
+				dechetDechet.remove(0);
+			}
 		}
 	}
 	
