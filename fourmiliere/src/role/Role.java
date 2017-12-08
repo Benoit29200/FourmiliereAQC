@@ -12,5 +12,9 @@ public abstract class Role {
 	public Adulte getAdulte() {
 		return this.maFourmiAdulte;
 	}
+
+	public void step() {
+		
+	}
 	
 }

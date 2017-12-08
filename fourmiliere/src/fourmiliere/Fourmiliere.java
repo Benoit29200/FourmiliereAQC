@@ -7,13 +7,13 @@ import cimetiere.Cimetiere;
 import depot.Depot;
 import etat.Adulte;
 import role.Reine;
-import role.Role;
 
 public class Fourmiliere {
-	List<Fourmi> lesFourmis;
+	ArrayList<Fourmi> lesFourmis;
 	Nid monNid;
 	Depot monDepot;
 	Cimetiere monCimetiere;
+	
 	
 	public Fourmiliere() {
 		this.lesFourmis = new ArrayList<Fourmi>();
@@ -31,15 +31,19 @@ public class Fourmiliere {
 		
 		Fourmi f = new Fourmi(this);
 		Adulte a = new Adulte(f);
-		Reine r  = new Reine(a);
+		Reine r = new Reine(a);
+		a.setRole(r);
+		f.setEtat(a);
 		
-		return r.getFourmi();
+		return f;
 		
 	}
 	
-	public boolean addFourmi() {
-		Fourmi newFourmi = new Fourmi(this);
-		return lesFourmis.add(newFourmi);
+	public void addFourmi(int nbOeufs) {
+		System.out.println("ok");
+		for(int i=0 ; i < nbOeufs ; i++) {
+			this.lesFourmis.add(new Fourmi(this));
+		}
 	}
 	
 	public Nid getNid() {
@@ -56,5 +60,13 @@ public class Fourmiliere {
 	
 	public Cimetiere getCimetiere() {
 		return this.monCimetiere;
+	}
+
+	
+	public void step() {
+		List<Fourmi> l = (List<Fourmi>) lesFourmis.clone();
+		for(Fourmi f: l) {
+			f.step();
+		}
 	}
 }

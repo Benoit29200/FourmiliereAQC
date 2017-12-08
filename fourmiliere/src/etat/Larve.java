@@ -1,8 +1,9 @@
 package etat;
 
 import fourmiliere.Fourmi;
+import role.ActionAFaire;
 
-public class Larve extends EtatDeveloppement {
+public class Larve extends EtatDeveloppement implements ActionAFaire {
 	
 	public Larve(Fourmi f) {
 		super(f);

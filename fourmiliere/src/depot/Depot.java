@@ -26,7 +26,9 @@ public class Depot {
 		this.poids += p.poids;
 	}
 
-	public void consommeProie(Proie p, Fourmi f) {
+	public void consommeProie(Fourmi f) {
+		if(mesProie.isEmpty()) return;
+		Proie p = mesProie.get(0);
 		mesProie.remove(p);
 		double diviseur = 1.0; // larve
 

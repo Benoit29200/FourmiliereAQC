@@ -26,5 +26,9 @@ public abstract class EtatDeveloppement {
 	public void setRole(Role r) {
 		this.monRole = r;
 	}
+
+	public void step() {
+		monRole.step();
+	}
 	
 }

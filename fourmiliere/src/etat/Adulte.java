@@ -1,11 +1,9 @@
 package etat;
 
-import depot.Proie;
 import fourmiliere.Fourmi;
 import role.Femelle;
 import role.Male;
 import role.Ouvriere;
-import role.Role;
 import role.Soldat;
 
 public class Adulte extends EtatDeveloppement {
@@ -34,5 +32,6 @@ public class Adulte extends EtatDeveloppement {
 			this.monRole = new Ouvriere(this);
 		}
 	}
+
 
 }

@@ -1,9 +1,11 @@
 package role;
 
+
+
 import etat.Adulte;
 import fourmiliere.Fourmi;
 
-public class Reine extends Role {
+public class Reine extends Role implements ActionAFaire {
 
 	
 	public Reine(Adulte f) {
@@ -21,19 +23,22 @@ public class Reine extends Role {
 		this.getAdulte().getFourmi().setDureeVie(dureeVie);
 	}
 	
-	public boolean pondre() {
+	public void pondre() {
 		
-		boolean retour= false;
 		if(!this.getAdulte().getFourmi().getFourmiliere().getNid().getMesFourmis().contains(this.getFourmi())) {
-			retour = this.getAdulte().getFourmi().getFourmiliere().getNid().getMesFourmis().add(this.getFourmi());
-			if(!retour) return retour;
+			this.getAdulte().getFourmi().getFourmiliere().getNid().getMesFourmis().add(this.getFourmi());
 		}
 		int nbOeufs = 10 + (int)(Math.random() * ((50 - 10) + 1));
-		for(int i =0 ; i < nbOeufs ; i++) {
-			retour = this.getAdulte().getFourmi().getFourmiliere().addFourmi();
-			if(!retour) return false;
-		}
-		return retour;	
+		System.out.println(nbOeufs);
+		this.getFourmi().getFourmiliere().addFourmi(nbOeufs);
+		
+	}
+
+	@Override
+	public void step() {
+		pondre();
+		this.getFourmi().manger();
+		
 	}
 
 }

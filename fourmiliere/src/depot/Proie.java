@@ -5,8 +5,9 @@ public class Proie {
 	int dureeVie;
 	double poids;
 	
-	public Proie() {
-		
+	public Proie(int dureeVie,double poids) {
+		this.dureeVie = dureeVie;
+		this.poids = poids;
 	}
 	
 	public double getPoids() {
