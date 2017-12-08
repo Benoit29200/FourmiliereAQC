@@ -8,4 +8,9 @@ public abstract class Role {
 	public Role(Adulte f) {
 		this.maFourmiAdulte = f;
 	}
+	
+	public Adulte getAdulte() {
+		return this.maFourmiAdulte;
+	}
+	
 }

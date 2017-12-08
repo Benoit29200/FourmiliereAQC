@@ -1,5 +1,6 @@
 package etat;
 
+import depot.Proie;
 import fourmiliere.Fourmi;
 import role.Femelle;
 import role.Male;
@@ -30,8 +31,11 @@ public class Adulte extends EtatDeveloppement {
 		else {
 			this.monRole = new Ouvriere(this);
 		}
-		
-		
+	}
+	
+	public void manger() {
+		Proie p = this.getFourmi().getFourmiliere().getDepot().getProies().get(0);
+		this.getFourmi().getFourmiliere().getDepot().consommeProie(p, this.getFourmi());
 	}
 
 }

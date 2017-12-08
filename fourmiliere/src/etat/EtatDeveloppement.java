@@ -8,4 +8,9 @@ public abstract class EtatDeveloppement {
 	public EtatDeveloppement(Fourmi f) {
 		this.fourmi = f;
 	}
+	
+	public Fourmi getFourmi() {
+		return this.fourmi;
+	}
+	
 }
