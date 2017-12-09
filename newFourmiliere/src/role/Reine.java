@@ -13,13 +13,8 @@ public class Reine extends Role {
 	@Override
 	public void step() {
 		pondre();
-		
 	}
 
-	@Override
-	public void cycle() {
-		// Action à faire
-	}
 	
 	private void pondre() {
 	maFourmiliere.getNid().add(yourself); // la reine va dans le Nid

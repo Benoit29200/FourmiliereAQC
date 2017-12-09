@@ -19,7 +19,10 @@ public class Larve extends EtatDeveloppement {
 
 	@Override
 	public void cycle() {
-		// action a faire (fct duree vie)
+		if(yourself.setDureeVie(yourself.getDureeVie())-1==0) {
+			// larve se transforme en nymphe
+			yourself.changeEtatDeveloppement(new Nymphe(yourself,maFourmiliere));
+		}
 		
 	}
 }

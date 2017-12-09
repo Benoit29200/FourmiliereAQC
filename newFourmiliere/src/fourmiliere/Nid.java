@@ -13,4 +13,8 @@ public class Nid {
 	public boolean add(Fourmi f) {
 		return this.fourmisDansLeNid.add(f);
 	}
+	
+	public boolean remove(Fourmi f) {
+		return this.fourmisDansLeNid.remove(f);
+	}
 }

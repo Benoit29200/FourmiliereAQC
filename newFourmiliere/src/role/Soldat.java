@@ -16,11 +16,4 @@ public class Soldat extends Role {
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Override
-	public void cycle() {
-		// Action à faire
-		
-	}
-
 }

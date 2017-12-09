@@ -15,10 +15,5 @@ public class Femelle extends Sexuee {
 		
 	}
 
-	@Override
-	public void cycle() {
-		// Action à faire
-		
-	}
 
 }

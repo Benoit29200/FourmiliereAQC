@@ -17,10 +17,6 @@ public class Ouvriere extends Role {
 		
 	}
 
-	@Override
-	public void cycle() {
-		// Action à faire
-		
-	}
+
 
 }

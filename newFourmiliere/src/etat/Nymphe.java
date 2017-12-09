@@ -2,6 +2,7 @@ package etat;
 
 import fourmiliere.Fourmi;
 import fourmiliere.Fourmiliere;
+import role.*;
 
 public class Nymphe extends EtatDeveloppement {
 	
@@ -16,10 +17,13 @@ public class Nymphe extends EtatDeveloppement {
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Override
 	public void cycle() {
-		// action à faire
+		if(yourself.setDureeVie(yourself.getDureeVie())-1==0) {
+			// nymphe se transforme en adulte
+			// TODO faire pourcentage pour créer ouvriere ou sexué ou soldat!
+			yourself.changeEtatDeveloppement(new Adulte(yourself,maFourmiliere,new Ouvriere(yourself,maFourmiliere)));
+			maFourmiliere.getNid().remove(yourself); // on supprime la fourmi du nid, car elle est devenu adulte
+		}
 		
 	}
 

@@ -32,8 +32,9 @@ public class Fourmi implements ActionAFaire{
 		return this.dureeVie;
 	}
 	
-	public void setDureeVie(int duree) {
+	public int setDureeVie(int duree) {
 		this.dureeVie = duree;
+		return duree;
 	}
 	
 	public double getPoids() {
