@@ -38,7 +38,10 @@ public class Fourmiliere implements ActionAFaire {
 		reine.changeEtatDeveloppement(etatAdulte);
 		return reine;
 	}
-
+	
+	public Nid getNid() {
+		return this.leNid;
+	}
 	
 	public void step() {
 		// TODO Auto-generated method stub
@@ -46,7 +49,9 @@ public class Fourmiliere implements ActionAFaire {
 	}
 	
 	public void cycle() {
-		for(Fourmi f:lesFourmis) {
+		
+		List<Fourmi> clone = new ArrayList<Fourmi>(lesFourmis);
+		for(Fourmi f:clone) {
 			f.cycle();
 		}
 		

@@ -1,5 +1,16 @@
 package fourmiliere;
 
-public class Nid {
+import java.util.ArrayList;
+import java.util.List;
 
+public class Nid {
+	private List<Fourmi> fourmisDansLeNid;
+	
+	public Nid() {
+		this.fourmisDansLeNid = new ArrayList<Fourmi>();
+	}
+	
+	public boolean add(Fourmi f) {
+		return this.fourmisDansLeNid.add(f);
+	}
 }
