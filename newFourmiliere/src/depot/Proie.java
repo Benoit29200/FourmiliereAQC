@@ -1,11 +1,12 @@
 package depot;
 
 public class Proie {
-	private Double poids;
+	private double poids;
 	private double dureeVie;
 	
-	public Proie() {
-		//TODO
+	public Proie(double dureeVie,double poids) {
+		this.dureeVie = dureeVie;
+		this.poids = poids;
 	}
 	
 	public Double getPoids() {

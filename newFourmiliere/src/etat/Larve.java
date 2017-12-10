@@ -14,7 +14,7 @@ public class Larve extends EtatDeveloppement {
 	@Override
 	public void step() {
 		// TODO Auto-generated method stub
-		manger();
+		manger(yourself.getPoids());
 		
 	}
 
@@ -26,7 +26,7 @@ public class Larve extends EtatDeveloppement {
 		}
 	}
 	
-	private void manger() {
-		//TODO
+	private void manger(double poids) {
+		this.maFourmiliere.consommer(poids);
 	}
 }

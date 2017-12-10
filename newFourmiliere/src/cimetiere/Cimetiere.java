@@ -5,18 +5,21 @@ import java.util.List;
 
 import depot.Proie;
 import fourmiliere.Fourmi;
+import fourmiliere.Fourmiliere;
 
 public class Cimetiere {
 	List<Proie> lesProieMorte;
 	List<Fourmi> lesFourmisMorte;
+	Fourmiliere laFourmiliere;
 	
-	public Cimetiere() {
+	public Cimetiere(Fourmiliere fourmiliere) {
 		this.lesProieMorte = new ArrayList<Proie>();
 		this.lesFourmisMorte = new ArrayList<Fourmi>();
+		this.laFourmiliere = fourmiliere;
 	}
 	
 	public boolean enterrerFourmi(Fourmi fourmi) {
-		return this.lesFourmisMorte.add(fourmi);
+		return  (this.laFourmiliere.supprimerFourmi(fourmi) && this.lesFourmisMorte.add(fourmi));
 	}
 	
 	public boolean enterrerProie(Proie proie) {

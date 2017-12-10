@@ -17,88 +17,88 @@ public class Fourmiliere implements ActionAFaire {
 	public Depot leDepot;
 	public Cimetiere leCimetiere;
 	public Nid leNid;
-	
+
 	public Fourmiliere() {
 		this.lesFourmis = new ArrayList<Fourmi>();
 		this.leDepot = new Depot(this);
-		this.leCimetiere = new Cimetiere();
+		this.leCimetiere = new Cimetiere(this);
 		this.leNid = new Nid();
 		start();
 	}
-	
+
 	private void start() {
 		Fourmi laReine = creerReine();
 		this.lesFourmis.add(laReine);
 	}
-	
+
 	private Fourmi creerReine() {
-		
+
 		Fourmi reine = new Fourmi(this);
-		Role roleReine = new Reine(reine,this);
-		EtatDeveloppement etatAdulte = new Adulte(reine,this,roleReine);
+		Role roleReine = new Reine(reine, this);
+		EtatDeveloppement etatAdulte = new Adulte(reine, this, roleReine);
 		reine.changeEtatDeveloppement(etatAdulte);
 		return reine;
 	}
-	
+
 	public boolean ajouterFourmi(Fourmi fourmi) {
 		return this.lesFourmis.add(fourmi);
 	}
-	
+
 	public boolean supprimerFourmi(Fourmi fourmi) {
 		return this.lesFourmis.remove(fourmi);
 	}
-	
+
 	/**************************************
-	 **				NID
-	***************************************/
+	 ** NID
+	 ***************************************/
 	public boolean ajouterOeufDansLeNid(Fourmi f) {
 		return this.leNid.ajouterOeufDansLeNid(f);
 	}
-	
-	public boolean supprimerOeufDansLeNid(Fourmi f) {
-		return this.leNid.supprimerOeufDansLeNid(f);
+
+	public boolean transformerOeufDansLeNid(Fourmi f) {
+		return this.leNid.transformerOeufDansLeNid(f);
 	}
-	
+
 	public List<Fourmi> lesFourmisDansLeNid() {
 		return this.leNid.lesFourmisDansLeNid();
 	}
-	
+
 	/**************************************
-	 **				DEPOT
-	***************************************/
+	 ** DEPOT
+	 ***************************************/
 	public void ajouterProieAuDepot(Proie p) {
 		this.leDepot.ajouterProieAuDepot(p);
 	}
-	
+
 	public void trierDepot(int nbProie) {
 		this.leDepot.trierDepot(nbProie);
 	}
-	
+
 	public boolean consommer(Double poids) {
 		return this.leDepot.consommer(poids);
 	}
-	
+
 	/**************************************
-	 **				CIMETIERE
-	***************************************/
+	 ** CIMETIERE
+	 ***************************************/
 	public boolean enterrerProie(Proie proie) {
 		return this.leCimetiere.enterrerProie(proie);
 	}
-	
+
 	public boolean enterrerFourmi(Fourmi fourmi) {
 		return this.leCimetiere.enterrerFourmi(fourmi);
 	}
-	
+
 	public void step() {
 		List<Fourmi> clone = new ArrayList<Fourmi>(lesFourmis);
-		for(Fourmi f:clone) {
+		for (Fourmi f : clone) {
 			f.step();
 		}
 	}
-	
-	public void cycle() {	
+
+	public void cycle() {
 		List<Fourmi> clone = new ArrayList<Fourmi>(lesFourmis);
-		for(Fourmi f:clone) {
+		for (Fourmi f : clone) {
 			f.cycle();
 		}
 	}

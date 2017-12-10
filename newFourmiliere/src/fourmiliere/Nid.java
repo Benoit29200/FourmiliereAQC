@@ -14,7 +14,7 @@ public class Nid {
 		return this.fourmisDansLeNid.add(f);
 	}
 	
-	public boolean supprimerOeufDansLeNid(Fourmi f) {
+	public boolean transformerOeufDansLeNid(Fourmi f) {
 		return this.fourmisDansLeNid.remove(f);
 	}
 	

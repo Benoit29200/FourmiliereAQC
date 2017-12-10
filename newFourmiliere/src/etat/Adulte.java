@@ -14,7 +14,7 @@ public class Adulte extends EtatDeveloppement {
 	@Override
 	public void step() {
 		monRole.step();
-		manger();
+		manger(this.yourself.getPoids() / 3);
 		
 	}
 
@@ -23,9 +23,12 @@ public class Adulte extends EtatDeveloppement {
 		monRole.cycle();
 	}
 	
-	private void manger() {
+	private void manger(Double poids) {
 		//TODO
 		
+		this.maFourmiliere.consommer(poids);
 		//après avoir manger, une fourmi va enlever 1 à 2 fourmi du cimetiere
+		this.maFourmiliere.trierDepot(2);
+		
 	}
 }

@@ -29,7 +29,7 @@ public class Depot {
 		for(Proie proie:this.lesProiesDansLeDepot) {
 			if(proie.estMorte()) {
 				this.lesProiesDansLeDepot.remove(proie);
-				
+				maFourmiliere.enterrerProie(proie);
 				nbProieASupprimer--;
 				if(nbProieASupprimer == 0) {
 					return;

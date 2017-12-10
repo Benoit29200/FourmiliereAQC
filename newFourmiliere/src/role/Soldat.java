@@ -18,7 +18,7 @@ public class Soldat extends Role {
 	
 	public void cycle() {
 		if(yourself.setDureeVie(yourself.getDureeVie()-1)==0) {
-			// mettre fourmi dans le cimetiere
+			maFourmiliere.enterrerFourmi(yourself);
 		}
 	}
 	

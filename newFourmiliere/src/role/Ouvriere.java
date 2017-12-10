@@ -1,5 +1,6 @@
 package role;
 
+import depot.Proie;
 import fourmiliere.Fourmi;
 import fourmiliere.Fourmiliere;
 
@@ -26,12 +27,16 @@ public class Ouvriere extends Role {
 
 	public void cycle() {
 		if (yourself.setDureeVie(yourself.getDureeVie() - 1) == 0) {
-			// mettre fourmi dans le cimetiere
+			maFourmiliere.enterrerFourmi(yourself);
 		}
 	}
 	
 	private void chasser() {
-		//TODO
+		
+		double poids = 1.5 + (double) (Math.random() * ((90.0 - 1.5) + 1));
+		Proie p = new Proie(1.66,poids); // 40h de durée de vie = 1.66 jour
+		
+		this.maFourmiliere.ajouterProieAuDepot(p);
 	}
 	
 	private void entretienNid() {

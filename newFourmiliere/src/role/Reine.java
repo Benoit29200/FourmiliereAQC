@@ -32,6 +32,7 @@ public class Reine extends Role {
 	public void cycle() {
 		if(yourself.setDureeVie(yourself.getDureeVie()-1)==0) {
 			// la reine est morte, qu'est ce qu'on fait ?
+			// nouvelle fécondation pour avoir une nouvelle reine ?
 		}
 
 	}

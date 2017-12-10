@@ -14,7 +14,7 @@ public abstract class Sexuee extends Role implements ActionAFaire {
 	
 	public void cycle() {
 		if(yourself.setDureeVie(yourself.getDureeVie()-1)==0) {
-			// mettre fourmi dans le cimetiere
+			maFourmiliere.enterrerFourmi(yourself);
 		}
 	}
 	
@@ -25,6 +25,7 @@ public abstract class Sexuee extends Role implements ActionAFaire {
 	
 	private Fourmiliere fecondation() {
 		
+		// male et femelle s'envollent et partent de la fourmilliere pour la fécondation
 		// une chance sur 1000 de créer une nouvelle fourmiliere
 		// à la fin de la fécondation, les males meurent
 		//999 chance sur 1000 que les femelles meurent
