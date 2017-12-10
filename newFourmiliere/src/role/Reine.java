@@ -16,14 +16,16 @@ public class Reine extends Role {
 	}
 
 	private void pondre() {
-		if(!maFourmiliere.getNid().getFourmisDansLeNid().contains(yourself)) {
-			maFourmiliere.getNid().add(yourself); // la reine va dans le Nid
-			maFourmiliere.removeFourmi(yourself);
+		System.out.println("pond");
+		if(!maFourmiliere.lesFourmisDansLeNid().contains(yourself)) {
+			maFourmiliere.lesFourmisDansLeNid().add(yourself); // la reine va dans le Nid
 		}
 		int nbOeufs = 20 + (int) (Math.random() * ((50 - 20) + 1)); // entre 20 et 50 oeufs
 
 		for (int i = 0; i < nbOeufs; i++) {
-			maFourmiliere.getNid().add(new Fourmi(maFourmiliere));
+			Fourmi newOeuf =  new Fourmi(maFourmiliere);
+			maFourmiliere.lesFourmisDansLeNid().add(newOeuf);
+			maFourmiliere.ajouterFourmi(newOeuf);
 		}
 	}
 	

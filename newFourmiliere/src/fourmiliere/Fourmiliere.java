@@ -5,6 +5,7 @@ import java.util.List;
 
 import cimetiere.Cimetiere;
 import depot.Depot;
+import depot.Proie;
 import etat.Adulte;
 import etat.EtatDeveloppement;
 import lesInterfaces.ActionAFaire;
@@ -19,7 +20,7 @@ public class Fourmiliere implements ActionAFaire {
 	
 	public Fourmiliere() {
 		this.lesFourmis = new ArrayList<Fourmi>();
-		this.leDepot = new Depot();
+		this.leDepot = new Depot(this);
 		this.leCimetiere = new Cimetiere();
 		this.leNid = new Nid();
 		start();
@@ -39,16 +40,53 @@ public class Fourmiliere implements ActionAFaire {
 		return reine;
 	}
 	
-	public boolean addFourmi(Fourmi fourmi) {
+	public boolean ajouterFourmi(Fourmi fourmi) {
 		return this.lesFourmis.add(fourmi);
 	}
 	
-	public boolean removeFourmi(Fourmi fourmi) {
+	public boolean supprimerFourmi(Fourmi fourmi) {
 		return this.lesFourmis.remove(fourmi);
 	}
 	
-	public Nid getNid() {
-		return this.leNid;
+	/**************************************
+	 **				NID
+	***************************************/
+	public boolean ajouterOeufDansLeNid(Fourmi f) {
+		return this.leNid.ajouterOeufDansLeNid(f);
+	}
+	
+	public boolean supprimerOeufDansLeNid(Fourmi f) {
+		return this.leNid.supprimerOeufDansLeNid(f);
+	}
+	
+	public List<Fourmi> lesFourmisDansLeNid() {
+		return this.leNid.lesFourmisDansLeNid();
+	}
+	
+	/**************************************
+	 **				DEPOT
+	***************************************/
+	public void ajouterProieAuDepot(Proie p) {
+		this.leDepot.ajouterProieAuDepot(p);
+	}
+	
+	public void trierDepot(int nbProie) {
+		this.leDepot.trierDepot(nbProie);
+	}
+	
+	public boolean consommer(Double poids) {
+		return this.leDepot.consommer(poids);
+	}
+	
+	/**************************************
+	 **				CIMETIERE
+	***************************************/
+	public boolean enterrerProie(Proie proie) {
+		return this.leCimetiere.enterrerProie(proie);
+	}
+	
+	public boolean enterrerFourmi(Fourmi fourmi) {
+		return this.leCimetiere.enterrerFourmi(fourmi);
 	}
 	
 	public void step() {
@@ -60,7 +98,6 @@ public class Fourmiliere implements ActionAFaire {
 	
 	public void cycle() {	
 		List<Fourmi> clone = new ArrayList<Fourmi>(lesFourmis);
-		clone.addAll(leNid.getFourmisDansLeNid());
 		for(Fourmi f:clone) {
 			f.cycle();
 		}

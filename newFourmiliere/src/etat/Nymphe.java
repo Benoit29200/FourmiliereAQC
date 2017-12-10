@@ -37,8 +37,8 @@ public class Nymphe extends EtatDeveloppement {
 				yourself.changeEtatDeveloppement(
 						new Adulte(yourself, maFourmiliere, new Ouvriere(yourself, maFourmiliere)));
 			}
-			maFourmiliere.addFourmi(yourself);
-			maFourmiliere.getNid().remove(yourself); // on supprime la fourmi du nid, car elle est devenu adulte
+			maFourmiliere.ajouterFourmi(yourself);
+			maFourmiliere.lesFourmisDansLeNid().remove(yourself); // on supprime la fourmi du nid, car elle est devenu adulte
 		}
 	}
 

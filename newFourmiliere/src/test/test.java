@@ -8,9 +8,8 @@ import fourmiliere.Fourmiliere;
 public class test {
 
 	@Test
-	public void test() {
+	public void testCycle() {
 		Fourmiliere maFourmiliere = new Fourmiliere();
-		maFourmiliere.cycle();
 		maFourmiliere.step();
 		
 		
@@ -29,6 +28,9 @@ public class test {
 			maFourmiliere.cycle();
 		}
 		
+		// la reine pond encore
+		maFourmiliere.step();
+		
 		// affiche les fourmis dans la fourmiliere
 		System.out.println("Les fourmis dans la fourmiliere: ");
 		for(Fourmi f:maFourmiliere.lesFourmis) {
@@ -37,7 +39,7 @@ public class test {
 		
 		// affiche les fourmis dans le nid
 		System.out.println("Les fourmis dans le nid: ");
-		for(Fourmi f:maFourmiliere.getNid().getFourmisDansLeNid()) {
+		for(Fourmi f:maFourmiliere.lesFourmisDansLeNid()) {
 			System.out.println("\t"+f.toString());
 		}
 	}
