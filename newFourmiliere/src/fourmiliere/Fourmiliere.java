@@ -11,9 +11,11 @@ import etat.EtatDeveloppement;
 import lesInterfaces.ActionAFaire;
 import role.Reine;
 import role.Role;
+import terrain.Position;
 
 public class Fourmiliere implements ActionAFaire {
 	public List<Fourmi> lesFourmis;
+	public List<Position> positionFourmiliere;
 	public Depot leDepot;
 	public Cimetiere leCimetiere;
 	public Nid leNid;
