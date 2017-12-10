@@ -19,7 +19,7 @@ public class Oeuf extends EtatDeveloppement {
 
 	@Override
 	public void cycle() {
-		if(yourself.setDureeVie(yourself.getDureeVie())-1==0) {
+		if(yourself.setDureeVie(yourself.getDureeVie()-1)==0) {
 			// oeuf se transforme en larve
 			yourself.changeEtatDeveloppement(new Larve(yourself,maFourmiliere));
 		}

@@ -17,4 +17,8 @@ public class Nid {
 	public boolean remove(Fourmi f) {
 		return this.fourmisDansLeNid.remove(f);
 	}
+	
+	public List<Fourmi> getFourmisDansLeNid(){
+		return this.fourmisDansLeNid;
+	}
 }

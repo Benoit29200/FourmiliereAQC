@@ -18,7 +18,7 @@ public class Nymphe extends EtatDeveloppement {
 	}
 
 	public void cycle() {
-		if (yourself.setDureeVie(yourself.getDureeVie()) - 1 == 0) {
+		if (yourself.setDureeVie(yourself.getDureeVie()-1) == 0) {
 			// nymphe se transforme en adulte
 			int EtatAdulte = 1 + (int) (Math.random() * 100);
 			if (EtatAdulte <= 15) {
@@ -37,7 +37,7 @@ public class Nymphe extends EtatDeveloppement {
 				yourself.changeEtatDeveloppement(
 						new Adulte(yourself, maFourmiliere, new Ouvriere(yourself, maFourmiliere)));
 			}
-
+			maFourmiliere.addFourmi(yourself);
 			maFourmiliere.getNid().remove(yourself); // on supprime la fourmi du nid, car elle est devenu adulte
 		}
 	}

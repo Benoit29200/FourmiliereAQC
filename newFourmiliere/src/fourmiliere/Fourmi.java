@@ -53,6 +53,14 @@ public class Fourmi implements ActionAFaire{
 	@Override
 	public void cycle() {
 		etatFourmi.cycle();
+	}
+	
+	public String toString() {
+		String res = "Etat : "+this.etatFourmi +
+					 "; Role : "+ this.etatFourmi.getMyRole() +
+					 "; durée de vie:  "+ this.dureeVie +
+					 "; poids : "+ this.poids;
+		return res;
 		
 	}
 }

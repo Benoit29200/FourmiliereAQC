@@ -39,6 +39,14 @@ public class Fourmiliere implements ActionAFaire {
 		return reine;
 	}
 	
+	public boolean addFourmi(Fourmi fourmi) {
+		return this.lesFourmis.add(fourmi);
+	}
+	
+	public boolean removeFourmi(Fourmi fourmi) {
+		return this.lesFourmis.remove(fourmi);
+	}
+	
 	public Nid getNid() {
 		return this.leNid;
 	}
@@ -46,12 +54,13 @@ public class Fourmiliere implements ActionAFaire {
 	public void step() {
 		List<Fourmi> clone = new ArrayList<Fourmi>(lesFourmis);
 		for(Fourmi f:clone) {
-			f.cycle();
+			f.step();
 		}
 	}
 	
 	public void cycle() {	
 		List<Fourmi> clone = new ArrayList<Fourmi>(lesFourmis);
+		clone.addAll(leNid.getFourmisDansLeNid());
 		for(Fourmi f:clone) {
 			f.cycle();
 		}
