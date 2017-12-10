@@ -47,8 +47,7 @@ public class Fourmi implements ActionAFaire{
 
 	@Override
 	public void step() {
-		// TODO Auto-generated method stub
-		
+		etatFourmi.step();
 	}
 
 	@Override

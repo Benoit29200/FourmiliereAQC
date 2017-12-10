@@ -44,18 +44,16 @@ public class Fourmiliere implements ActionAFaire {
 	}
 	
 	public void step() {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	public void cycle() {
-		
 		List<Fourmi> clone = new ArrayList<Fourmi>(lesFourmis);
 		for(Fourmi f:clone) {
 			f.cycle();
 		}
-		
 	}
 	
-
+	public void cycle() {	
+		List<Fourmi> clone = new ArrayList<Fourmi>(lesFourmis);
+		for(Fourmi f:clone) {
+			f.cycle();
+		}
+	}
 }

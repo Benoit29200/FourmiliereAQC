@@ -13,7 +13,16 @@ public class Soldat extends Role {
 
 	@Override
 	public void step() {
-		// TODO Auto-generated method stub
-		
+		defendLeNid();
+	}
+	
+	public void cycle() {
+		if(yourself.setDureeVie(yourself.getDureeVie()-1)==0) {
+			// mettre fourmi dans le cimetiere
+		}
+	}
+	
+	private void defendLeNid() {
+		//TODO
 	}
 }

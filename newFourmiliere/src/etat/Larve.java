@@ -14,6 +14,7 @@ public class Larve extends EtatDeveloppement {
 	@Override
 	public void step() {
 		// TODO Auto-generated method stub
+		manger();
 		
 	}
 
@@ -23,6 +24,9 @@ public class Larve extends EtatDeveloppement {
 			// larve se transforme en nymphe
 			yourself.changeEtatDeveloppement(new Nymphe(yourself,maFourmiliere));
 		}
-		
+	}
+	
+	private void manger() {
+		//TODO
 	}
 }

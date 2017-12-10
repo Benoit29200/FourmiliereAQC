@@ -21,10 +21,4 @@ public abstract class Role implements ActionAFaire {
 		return this.maFourmiliere;
 	}
 	
-	public void cycle() {
-		if(yourself.setDureeVie(yourself.getDureeVie()-1)==0) {
-			// mettre fourmi dans le cimetiere
-		}
-
-	}
 }

@@ -8,12 +8,4 @@ public class Femelle extends Sexuee {
 	public Femelle(Fourmi fourmi, Fourmiliere maFourmiliere) {
 		super(fourmi, maFourmiliere);
 	}
-
-	@Override
-	public void step() {
-		// TODO Auto-generated method stub
-		
-	}
-
-
 }

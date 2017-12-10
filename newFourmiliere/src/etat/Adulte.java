@@ -13,12 +13,19 @@ public class Adulte extends EtatDeveloppement {
 
 	@Override
 	public void step() {
-		// TODO Auto-generated method stub
+		monRole.step();
+		manger();
 		
 	}
 
 	@Override
 	public void cycle() {
 		monRole.cycle();
+	}
+	
+	private void manger() {
+		//TODO
+		
+		//après avoir manger, une fourmi va enlever 1 à 2 fourmi du cimetiere
 	}
 }

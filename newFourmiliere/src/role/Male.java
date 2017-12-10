@@ -9,11 +9,4 @@ public class Male extends Sexuee {
 		super(fourmi, maFourmiliere);
 	}
 
-	@Override
-	public void step() {
-		// TODO Auto-generated method stub
-		
-	}
-
-
 }
